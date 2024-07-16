@@ -13,33 +13,32 @@ conda env create -f environment.yml
 mkdir -p $(conda info --base)/envs/segment/etc/conda/activate.d
 mkdir -p $(conda info --base)/envs/segment/etc/conda/deactivate.d
 
-echo 'export PATH=~/manual_tomo_annotate/bin:$PATH' > $(conda info --base)/envs/segment/etc/conda/activate.d/env_vars.sh
+echo 'export PATH=$HOME/manual_tomo_annotate/bin:$PATH' > $(conda info --base)/envs/segment/etc/conda/activate.d/env_vars.sh
 chmod +x $(conda info --base)/envs/segment/etc/conda/activate.d/env_vars.sh
 
 echo 'unset PATH' > $(conda info --base)/envs/segment/etc/conda/deactivate.d/env_vars.sh
 chmod +x $(conda info --base)/envs/segment/etc/conda/deactivate.d/env_vars.sh
 
 # make segment script executable
-chmod +x ~/manual_tomo_annotate/bin/segment.sh
+chmod +x $HOME/manual_tomo_annotate/bin/segment.sh
 
 # create data directory (check if it already exists first)
-if ! [ -d ~/segmentation_data ]; then
-    mkdir ~/segmentation_data
-    cd ~/segmentation_data
+if ! [ -d $HOME/segmentation_data ]; then
+    mkdir $HOME/segmentation_data
 else
-    echo "Directory ~/segmentation_data already exists."
+    echo "Directory $HOME/segmentation_data already exists."
 fi
 
-if ! [ -d raw_tomograms]; then
-    mkdir raw_tomograms
+if ! [ -d $HOME/segmentation_data/raw_tomograms ]; then
+    mkdir $HOME/segmentation_data/raw_tomograms
 else
-    echo "Directory raw_tomograms already exists."
+    echo "Directory $HOME/segmentation_data/raw_tomograms already exists."
 fi
 
-if ! [ -d annotations]; then
-    mkdir annotations
+if ! [ -d $HOME/segmentation_data/annotations ]; then
+    mkdir $HOME/segmentation_data/annotations
 else
-    echo "Directory annotations already exists."
+    echo "Directory $HOME/segmentation_data/annotations already exists."
 fi
 
 cd 
