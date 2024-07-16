@@ -7,7 +7,7 @@ if ! command -v conda >/dev/null 2>&1; then
 fi
 
 # build conda environment
-conda env create -f environment.yml
+conda env create -f $HOME/manual_tomo_annotate/scripts/environment.yml
 
 # make segment.sh executable anywhere within the environment
 mkdir -p $(conda info --base)/envs/segment/etc/conda/activate.d
