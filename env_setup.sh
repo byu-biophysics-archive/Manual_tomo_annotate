@@ -8,7 +8,7 @@ fi
 
 # build conda environment
 if ! conda env create -f "$HOME/manual_tomo_annotate/scripts/environment.yml"; then
-    echo "Failed to create conda environment."
+    echo "Failed to create conda environment. Exiting environment setup."
     exit 1
 fi
 
