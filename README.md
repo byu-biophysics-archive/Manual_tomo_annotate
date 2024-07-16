@@ -8,6 +8,6 @@ This repository hosts the necessary scripts to create labeled data for tomograms
 - Instructions for storing data on the supercomputer
 
 #### What you need
-- Some version of conda to build your virtual environment
+- Conda/mamba
 - Python
 - ITK-SNAP
