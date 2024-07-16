@@ -20,7 +20,7 @@ echo 'unset PATH' > $(conda info --base)/envs/segment/etc/conda/deactivate.d/env
 chmod +x $(conda info --base)/envs/segment/etc/conda/deactivate.d/env_vars.sh
 
 # make segment script executable
-chmod +x $HOME/manual_tomo_annotate/bin/segment.sh
+chmod +x $HOME/manual_tomo_annotate/bin/start_segment.sh
 
 # create data directory (check if it already exists first)
 if ! [ -d $HOME/segmentation_data ]; then
