@@ -49,12 +49,4 @@ output_file="$output_dir/$(basename "${target_file%.*}.mha")"
 
 # Open the output file with itksnap
 echo "Opening $output_file with itksnap..."
-itksnap "$output_file"
-
-# Check if itksnap was successful
-if [ $? -ne 0 ]; then
-    echo "Error: itksnap failed to open $output_file."
-    exit 1
-fi
-
-echo "Process completed successfully."
+exec itksnap "$output_file"
