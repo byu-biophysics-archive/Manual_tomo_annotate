@@ -31,6 +31,9 @@ Note: the `env_setup.sh` script should auto-build these directories. They *will 
 │   │   ├── dataset_1
 │   │   │   ├── annotation_1.mrc
 │   │   │   └── annotation_2.mrc
+│   │   └──
+│   └──
+└──
 ```
 ### File Names
 Raw images are automatically downloaded and renamed to run_<runID>.mrc and converted to run_<runID>.mha. They are saved in the directory dataset_<datasetID>. All IDs correspond to the CZI database IDs.
