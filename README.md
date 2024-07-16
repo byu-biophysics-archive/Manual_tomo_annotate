@@ -12,3 +12,10 @@ This repository hosts the necessary scripts to create labeled data for tomograms
 - Conda/mamba
 - Python
 - ITK-SNAP (Download [here](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3))
+
+# File Conventions for Segmentation Data
+Please do your best to follow the below conventions so all the data can stay organized. They're not set in stone, but we do need to make sure we stay on the same page.
+
+### File Structure
+
+### File Names
