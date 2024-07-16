@@ -18,20 +18,28 @@ Please do your best to follow the below conventions so all the data can stay org
 
 ### File Structure for Annotation Data
 Note: the `env_setup.sh` script should auto-build these directories. They *will not* end up in the GitHub repo, as tomograms are too big to store there. So, don't worry that these files do not show up on the repository. We will primarily be storing the files on the supercomputer. More on that later.
-$HOME/  
-├── segmentation_data/  
-│   ├── raw_tomograms # directory to hold raw image files. Does not need to be uploaded to the supercomputer  
-|   |   ├── dataset_1/  
-│   │   |   ├── <tomogram_1>.mrc  
-│   │   |   ├── <tomogram_1>.mha  
-│   │   |   ├── <tomogram_2>.mrc  
-│   │   |   └── <tomogram_2>.mha  
-│   ├── annotations/ # directory to hold the annotations we create. Does need to be uploaded to the supercomputer  
-|   |   ├── dataset_1/  
-│   │   |   ├── <annotation_1>.mha  
-│   │   |   ├── <annotation_2>.mha  
-│   │   |   └── <annotation_3>.mha  
-
+```
+.
+├── src
+│   ├── components
+│   │   ├── header.js
+│   │   └── footer.js
+│   ├── styles
+│   │   ├── main.css
+│   │   └── theme.css
+│   ├── main.py
+│   └── utils.py
+├── tests
+│   ├── unit
+│   │   ├── test_main.py
+│   │   └── test_utils.py
+│   ├── integration
+│   │   ├── test_integration.py
+│   └── test_all.py
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
 ### File Names
 Raw images are automatically downloaded and renamed to run_<runID>.mrc and converted to run_<runID>.mha. They are saved in the directory dataset_<datasetID>. All IDs correspond to the CZI database IDs.
 
