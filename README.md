@@ -20,25 +20,17 @@ Please do your best to follow the below conventions so all the data can stay org
 Note: the `env_setup.sh` script should auto-build these directories. They *will not* end up in the GitHub repo, as tomograms are too big to store there. So, don't worry that these files do not show up on the repository. We will primarily be storing the files on the supercomputer. More on that later.
 ```
 .
-├── src
-│   ├── components
-│   │   ├── header.js
-│   │   └── footer.js
-│   ├── styles
-│   │   ├── main.css
-│   │   └── theme.css
-│   ├── main.py
-│   └── utils.py
-├── tests
-│   ├── unit
-│   │   ├── test_main.py
-│   │   └── test_utils.py
-│   ├── integration
-│   │   ├── test_integration.py
-│   └── test_all.py
-├── .gitignore
-├── README.md
-└── requirements.txt
+├── segmentation_data
+│   ├── raw_tomograms # directory for raw images
+│   │   ├── dataset_1
+│   │   │   ├── tomo_1.mrc
+│   │   │   ├── tomo_1.mha
+│   │   │   ├── tomo_2.mrc
+│   │   │   └── tomo_2.mha
+│   ├── annotatons # directory for segmentation files
+│   │   ├── dataset_1
+│   │   │   ├── annotation_1.mrc
+│   │   │   └── annotation_2.mrc
 ```
 ### File Names
 Raw images are automatically downloaded and renamed to run_<runID>.mrc and converted to run_<runID>.mha. They are saved in the directory dataset_<datasetID>. All IDs correspond to the CZI database IDs.
