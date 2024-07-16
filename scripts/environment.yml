@@ -2,6 +2,7 @@ name: segment
 channels:
   - conda-forge
   - bioconda
+  - defaults
 dependencies:
   - bzip2=1.0.8=h99b78c6_7
   - c-ares=1.32.2=h99b78c6_0
