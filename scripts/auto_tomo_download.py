@@ -20,22 +20,6 @@ run = Run.find(client, query_filters=[Run.id == runid, Run.dataset.id == dataset
 tomoid = run.tomogram_voxel_spacings[0].tomograms[0].id
 tomogram = Tomogram.get_by_id(client, tomoid)
 tomogram.download_mrcfile()
-
-# wait for the file to be downloaded
-def wait_for_file(file_path):
-    previous_size = -1
-    check_interval = 0.25
-
-    while True:
-        if os.path.exists(file_path):
-            current_size = os.path.getsize(file_path)
-            if current_size == previous_size:
-                break
-            previous_size = current_size
-        time.sleep(check_interval)
-
-download_name = tomogram.name+'.mrc'
-wait_for_file(download_name)
-
+# rename the downloaded file
 new_file_name = 'run_'+runid+'.mrc'
 os.rename(download_name,new_file_name)
