@@ -3,7 +3,7 @@
 # exit on error
 set -e
 # initialize variables
-conda_name="segment"
+conda_name="annotate"
 # Parse command line arguments
 while getopts "n:" opt; do
   case $opt in
@@ -25,7 +25,7 @@ if ! conda env create -n $conda_name -f "$HOME/manual_tomo_annotate/scripts/envi
     else echo "Conda environment $conda_name created successfully."
 fi
 
-# make segment.sh executable anywhere within the environment
+# make annotate.sh executable anywhere within the environment
 CONDA_ENV_PATH=$(conda info --base)/envs/$conda_name
 mkdir -p "$CONDA_ENV_PATH/etc/conda/activate.d" || { echo "Failed to create activate.d directory"; exit 1; }
 mkdir -p "$CONDA_ENV_PATH/etc/conda/deactivate.d" || { echo "Failed to create deactivate.d directory"; exit 1; }
@@ -39,8 +39,8 @@ chmod +x "$CONDA_ENV_PATH/etc/conda/activate.d/env_vars.sh" || { echo "Failed to
 echo 'export PATH=$OLD_PATH' > "$CONDA_ENV_PATH/etc/conda/deactivate.d/env_vars.sh"
 chmod +x "$CONDA_ENV_PATH/etc/conda/deactivate.d/env_vars.sh" || { echo "Failed to make env_vars.sh executable"; exit 1; }
 
-# make segment script executable
-chmod +x "$HOME/manual_tomo_annotate/bin/start_segment.sh" || { echo "Failed to make start_segment.sh executable"; exit 1; }
+# make annotate script executable
+chmod +x "$HOME/manual_tomo_annotate/bin/annotate.sh" || { echo "Failed to make annotate.sh executable"; exit 1; }
 
 # create data directory (check if it already exists first)
 if ! [ -d "$HOME/segmentation_data" ]; then

@@ -13,11 +13,11 @@ This repository hosts the necessary scripts to create labeled data for tomograms
 2. Install ITK-SNAP, the GUI used to actually annotate (Download [here](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3))
 3. Clone this github repository using `git clone https://github.com/byu-biophysics/manual_tomo_annotate.git` in the terminal.
 4. In the terminal, navigate to the folder manual_tomo_annotate and run the command `chmod +x env_setup.sh`. This will make the setup script executable.
-5. Run `./env_setup.sh` to build the conda environment and folder structure for annotating. This script will automatically name the conda environment `segment`, but if you already have an enviornment named this run `./env_setup.sh -n <conda_env_name>` to create the enviornment with a different name.
+5. Run `./env_setup.sh` to build the conda environment and folder structure for annotating. This script will automatically name the conda environment `annotate`, but if you already have an enviornment named this run `./env_setup.sh -n <conda_env_name>` to create the enviornment with a different name.
 
 #### Use
-1. Activate the conda environment using `conda activate segment` or `conda activate <conda_env_name>` if you named it something different.
-2. Run `start_segment.sh -d <dataset_id> -r <run_id>` to download a tomogram and segment.
+1. Activate the conda environment using `conda activate annotate` or `conda activate <conda_env_name>` if you named it something different.
+2. Run `annotate.sh -d <dataset_id> -r <run_id>` to download a tomogram and segment.
 3. Save the segmentation image as described below in the File Convention section.
 
 #### Uploading to Supercomputer
@@ -26,7 +26,7 @@ Check back soon.
 Please do your best to follow the below conventions so all the data can stay organized. They're not set in stone, but we do need to make sure we know where all the data is and that everyone can find it easily.
 
 #### File Structure for Annotation Data
-Note: the `env_setup.sh` and `start_segment.sh` scripts should auto-build these directories. They **will not** end up in the GitHub repo, as tomograms are too big to store there. So, don't worry that these files do not show up on the repository, as we will primarily be storing files on the supercomputer.
+Note: the `env_setup.sh` and `annotate.sh` scripts should auto-build these directories. They **will not** end up in the GitHub repo, as tomograms are too big to store there. So, don't worry that these files do not show up on the repository, as we will primarily be storing files on the supercomputer.
 
 
 **Note:** DO NOT move the segmentation_data directory or its subdirectories from where they are created. Doing so will make the other scripts non-functional, as they will not be able to find the folders.
