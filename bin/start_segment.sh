@@ -43,7 +43,8 @@ if [ $? -ne 0 ]; then
     echo "Error: mrc_to_mha.py failed to convert $target_file."
     exit 1
 fi
-
+# remove original tomogram to save space
+rm "$target_file"
 # Determine the output file path
 segment_file="$HOME/segmentation_data/raw_tomograms/dataset_${dataset_id}/run_${run_id}.mha"
 
