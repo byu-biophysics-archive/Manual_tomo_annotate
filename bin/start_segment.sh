@@ -45,8 +45,8 @@ if [ $? -ne 0 ]; then
 fi
 
 # Determine the output file path
-output_file="$output_dir/$(basename "${target_file%.*}.mha")"
+segment_file="$HOME/segmentation_data/raw_tomograms/dataset_${dataset_id}/run_${run_id}.mha"
 
 # Open the output file with itksnap
-echo "Opening $output_file with itksnap..."
-exec itksnap "$output_file"
+echo "Opening $segment_file with itksnap..."
+exec itksnap "$segment_file"
