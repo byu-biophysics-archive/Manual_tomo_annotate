@@ -8,8 +8,8 @@ This repository hosts the necessary scripts to create labeled data for tomograms
 
 #### Set up/Installation
 1. Install conda if you haven't. I recommend using miniforge, as it has mamba built in which is a faster package management algorithm. On Mac, this can be installed with homebrew. However, any version of conda should work.
-    a. Install homebrew with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-    b. Install miniforge using `brew install --cask miniforge`.
+    1. Install homebrew with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+    2. Install miniforge using `brew install --cask miniforge`.
 2. Install ITK-SNAP, the GUI used to actually annotate (Download [here](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3))
 3. Clone this github repository using `git clone https://github.com/byu-biophysics/manual_tomo_annotate.git` in the terminal.
 4. In the terminal, navigate to the folder manual_tomo_annotate and run the command `chmod +x env_setup.sh`. This will make the setup script executable.
