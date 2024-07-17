@@ -27,6 +27,9 @@ Please do your best to follow the below conventions so all the data can stay org
 
 #### File Structure for Annotation Data
 Note: the `env_setup.sh` and `start_segment.sh` scripts should auto-build these directories. They **will not** end up in the GitHub repo, as tomograms are too big to store there. So, don't worry that these files do not show up on the repository, as we will primarily be storing files on the supercomputer.
+
+
+**Note:** DO NOT move the segmentation_data directory or its subdirectories from where they are created. Doing so will make the other scripts non-functional, as they will not be able to find the folders.
 ```
 .
 ├── segmentation_data
@@ -34,7 +37,7 @@ Note: the `env_setup.sh` and `start_segment.sh` scripts should auto-build these 
 │   │   ├── dataset_1
 │   │   │   ├── tomo_1.mha
 │   │   │   └── tomo_2.mha
-│   ├── annotatons # directory for segmentation files
+│   ├── annotations # directory for segmentation files
 │   │   ├── dataset_1
 │   │   │   ├── annotation_1.mrc
 │   │   │   └── annotation_2.mrc
