@@ -1,5 +1,5 @@
 ## About
-This repository hosts the necessary scripts to create labeled data for tomograms to be used in model training. This data can range from segmenting entire bacteria to labeling flagellar motors. This [log](https://docs.google.com/spreadsheets/d/1gFczEr1ZXQZatTAWr_M9jKB_Py_087QJ6UzVIi2dHHQ) keeps track of which tomograms have been labeled and which ones we want to do next.
+This repository hosts the necessary scripts to create labeled data for tomograms to be used in model training. This data can range from segmenting entire bacteria to labeling flagellar motors. This [log](https://docs.google.com/spreadsheets/d/1-osjVjA0YVw-CQIwIVUC7IbxnDa7ZMKbNN8waf8KUxg/edit?gid=0#gid=0) keeps track of which tomograms have been labeled and which ones we want to do next.
 
 #### What you need
 - Conda/mamba
