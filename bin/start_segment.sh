@@ -49,4 +49,4 @@ segment_file="$HOME/segmentation_data/raw_tomograms/dataset_${dataset_id}/run_${
 
 # Open the output file with itksnap
 echo "Opening $segment_file with itksnap..."
-exec itksnap "$segment_file"
+itksnap "$segment_file" &
