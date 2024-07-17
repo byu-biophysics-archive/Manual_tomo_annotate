@@ -49,3 +49,7 @@ Note: the `env_setup.sh` and `start_segment.sh` scripts should auto-build these 
 Raw images are automatically downloaded, converted, and renamed to `run_<runID>.mha`. They are saved in the directory `dataset_<datasetID>`. All IDs correspond to the CZI database IDs.
 
 Annotations should be saved following the pattern `<annotation_type>_<runID>`. For example, a membrane segmentation from dataset 10084, run 6100 would be saved as `segmentation_data/annotations/dataset_10084/membrane_6100.mha`.
+
+| Annotation Type | File name convention |
+|-----------------|----------------------|
+| Membrane        |`membrane_<runID>.mha`|
