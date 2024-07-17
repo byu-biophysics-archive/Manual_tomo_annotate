@@ -4,16 +4,17 @@ import os
 import time
 
 client = Client()
+
 # IDs for run to download
 datasetid = sys.argv[1]
 runid = sys.argv[2]
 
-# change directory so the file is downloaded in the correct location
-os.chdir('~/segmentation_data/raw_tomograms')
-# create dataset directory if it doesn't exist
-if not os.path.exists(os.getcwd()+'/dataset_'+datasetid):
-    os.makedirs(os.getcwd()+'/dataset_'+datasetid)
-os.chdir('dataset_'+datasetid)
+# set dataset directory
+home = os.environ['HOME']
+dataset_dir = os.path.join(home,'segmentation_data/raw_tomograms','dataset_'+datasetid)
+# create dataset directory if it doesn't exist and move into it
+os.makedirs(dataset_dir, exist_ok=True)
+os.chdir(dataset_dir)
 # get correct run and download it
 run = Run.find(client, query_filters=[Run.id == runid, Run.dataset.id == datasetid])[0]
 tomoid = run.tomogram_voxel_spacings[0].tomograms[0].id
