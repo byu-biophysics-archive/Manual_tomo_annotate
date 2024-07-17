@@ -52,4 +52,4 @@ Annotations should be saved following the pattern `<annotation_type>_<runID>`. F
 
 | Annotation Type | File name convention |
 |-----------------|----------------------|
-| Membrane        |`membrane_<runID>.mha`|
+| Membrane        |`membrane_<runID>`|
