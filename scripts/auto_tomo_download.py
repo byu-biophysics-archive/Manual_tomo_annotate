@@ -20,6 +20,7 @@ run = Run.find(client, query_filters=[Run.id == runid, Run.dataset.id == dataset
 tomoid = run.tomogram_voxel_spacings[0].tomograms[0].id
 tomogram = Tomogram.get_by_id(client, tomoid)
 tomogram.download_mrcfile()
-# rename the downloaded file
+
+# rename file
 new_file_name = 'run_'+runid+'.mrc'
-os.rename(download_name,new_file_name)
+os.rename(tomogram.name+'.mrc',new_file_name)
