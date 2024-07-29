@@ -1,9 +1,11 @@
 #!/bin/sh
 
-# get multiplexing shortcut
+# get login credentials
 read -p "Enter your supercomputer username: " username
 read -sp "Enter your supercomputer password: " password
-read -p "Enter your supercomputer 2FA code: " twofactor
+echo
+read -sp "Enter your supercomputer 2FA code: " twofactor
+echo
 
 # # Check if the multiplexed connection is active
 # ssh -O check "$username" 2>/dev/null
@@ -20,7 +22,7 @@ read -p "Enter your supercomputer 2FA code: " twofactor
 
 # transfer files to supercomputer
 expect << EOF
-spawn rsync -avzP "$HOME/segmentation_data/annotations/" "$username"@ssh.rc.byu.edu:"$HOME/groups/fslg_imagseg/nobackup/archive/segmentation_data/"
+spawn rsync -avzP "$HOME/segmentation_data/annotations/" "$username@ssh.rc.byu.edu:$HOME/groups/fslg_imagseg/nobackup/archive/segmentation_data/"
 expect "Password:"
 send "$password\r"
 expect "Verification code:"
