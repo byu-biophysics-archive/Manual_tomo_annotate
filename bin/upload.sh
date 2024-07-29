@@ -22,7 +22,7 @@ echo
 
 # transfer files to supercomputer
 expect << EOF
-spawn rsync -avzP "$HOME/segmentation_data/annotations/" "$username@ssh.rc.byu.edu:$HOME/groups/fslg_imagseg/nobackup/archive/segmentation_data/"
+spawn rsync -avzP --exclude=".DS_Store" --rsync-path="mkdir -p $HOME/groups/fslg_imagseg/nobackup/archive/segmentation_data && rsync" "$HOME/segmentation_data/annotations/" "$username@ssh.rc.byu.edu:$HOME/groups/fslg_imagseg/nobackup/archive/segmentation_data/"
 expect "Password:"
 send "$password\r"
 expect "Verification code:"
