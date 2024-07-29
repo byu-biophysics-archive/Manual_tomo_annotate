@@ -40,7 +40,7 @@ echo 'export PATH=$OLD_PATH' > "$CONDA_ENV_PATH/etc/conda/deactivate.d/env_vars.
 chmod +x "$CONDA_ENV_PATH/etc/conda/deactivate.d/env_vars.sh" || { echo "Failed to make env_vars.sh executable"; exit 1; }
 
 # make annotate script executable
-chmod +x "$HOME/manual_tomo_annotate/bin/annotate.sh" || { echo "Failed to make annotate.sh executable"; exit 1; }
+chmod -R +x "$HOME/manual_tomo_annotate/bin" || { echo "Failed to make scripts executable"; exit 1; }
 
 # create data directory (check if it already exists first)
 if ! [ -d "$HOME/segmentation_data" ]; then
