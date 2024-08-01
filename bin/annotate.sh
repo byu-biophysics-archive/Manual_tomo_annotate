@@ -48,6 +48,8 @@ rm "$target_file"
 # Determine the output file path
 segment_file="$HOME/segmentation_data/raw_tomograms/dataset_${dataset_id}/run_${run_id}.mha"
 
+cd "$HOME/segmentation_data/annotations/dataset_${dataset_id}/"
+
 # Open the output file with itksnap
 echo "Opening $segment_file with itksnap..."
-itksnap "$segment_file" &
+itksnap "$segment_file"
